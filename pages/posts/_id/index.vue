@@ -1,12 +1,12 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1 class="post-title">Title of the Post</h1>
+      <h1 class="post-title">{{ loadedPost.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on XXX</div>
-        <div class="post-detail">Wrtten by NAME</div>
+        <div class="post-detail">{{ loadedPost.updateDate }}</div>
+        <div class="post-detail">{{ loadedPost.author }}</div>
       </div>
-      <p class="post-content">Content of the post</p>
+      <p class="post-content">{{ loadedPost.content }}</p>
     </section>
     <section class="post-feedback">
       <p>
@@ -21,7 +21,22 @@
 
 <script>
 export default {
-
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: '1',
+          title: "First Post (ID: " + context.route.params.id + ")",
+          previewText: "This is our first post!",
+          author: 'David',
+          updatedDate: new Date(),
+          content: 'Some dummy text which is definityel not the preview text',
+          thumbnail:
+            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
+        }
+      });
+    },1000)
+  }
 }
 </script>
 
