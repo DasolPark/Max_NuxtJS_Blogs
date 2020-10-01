@@ -32,3 +32,10 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - 처음에는 SPA이기 때문에 chrome에서 console.log()를 볼 수 있다
 - 하지만, 새로고침을 하거나 새로운 url로 진입하면(?) 서버에서 console.log를 볼 수 있다
 - asyncData는 컴포넌트가 생성될 때 딱 한 번만 실행되기 때문(?)이다
+
+## Vuex
+
+- Classic Mode: index.js 하나에서 모두 해결
+- Modules Mode: multiple .js files, Every .js file becomes a namespaced module
+
+
