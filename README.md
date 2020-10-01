@@ -28,3 +28,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - 완성된 페이지를 보낼 수 있음
 - this 를 사용할 수 없음(component가 만들어지기 전이기 때문)
 - callback or promise로 this 문제를 해결 가능
+
+- 처음에는 SPA이기 때문에 chrome에서 console.log()를 볼 수 있다
+- 하지만, 새로고침을 하거나 새로운 url로 진입하면(?) 서버에서 console.log를 볼 수 있다
+- asyncData는 컴포넌트가 생성될 때 딱 한 번만 실행되기 때문(?)이다
