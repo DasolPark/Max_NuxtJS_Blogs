@@ -14,26 +14,34 @@ export default {
   components: {
     PostList
   },
+  asyncData(context, callback) {
+    // or return new Promise();
+    setTimeout(() => {
+      callback(null, {
+        loadPosts: [
+          {
+            id: '1',
+            title: "First Post",
+            previewText: "This is our first post!",
+            thumbnail:
+              "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
+          },
+          {
+            id: '2',
+            title: "Second Post",
+            previewText: "This is our second post!",
+            thumbnail:
+              "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
+          }
+        ]
+      });
+    }, 1500);
+  },
   data() {
     return {
-      loadPosts: [
-        {
-          id: '1',
-          title: "First Post",
-          previewText: "This is our first post!",
-          thumbnail:
-            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
-        },
-        {
-          id: '2',
-          title: "Second Post",
-          previewText: "This is our second post!",
-          thumbnail:
-            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
-        }
-      ]
+      loadPosts: []
     }
-  }
+  },
 }
 </script>
 

@@ -5,8 +5,8 @@
       :is-admin="isAdmin"
       :key="post.id"
       :id="post.id"
-      :thumbnail="post.thumbnail"
       :title="post.title"
+      :thumbnail="post.thumbnail"
       :previewText="post.previewText"
     />
   </section>
