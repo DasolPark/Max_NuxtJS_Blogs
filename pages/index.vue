@@ -3,46 +3,23 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList :posts="loadPosts" />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList';
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostList
+    PostList,
   },
-  asyncData(context, callback) {
-    console.log(context);
-    setTimeout(() => {
-      callback(null, {
-        loadPosts: [
-          {
-            id: '1',
-            title: "First Post",
-            previewText: "This is our first post!",
-            thumbnail:
-              "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
-          },
-          {
-            id: '2',
-            title: "Second Post",
-            previewText: "This is our second post!",
-            thumbnail:
-              "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
-          }
-        ]
-      });
-    }, 1500);
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    },
   },
-  data() {
-    return {
-      loadPosts: []
-    }
-  },
-}
+};
 </script>
 
 <style scoped>
@@ -51,7 +28,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
