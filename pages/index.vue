@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadPosts" />
   </div>
 </template>
 
@@ -13,6 +13,26 @@ import PostList from '@/components/Posts/PostList';
 export default {
   components: {
     PostList
+  },
+  data() {
+    return {
+      loadPosts: [
+        {
+          id: '1',
+          title: "First Post",
+          previewText: "This is our first post!",
+          thumbnail:
+            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
+        },
+        {
+          id: '2',
+          title: "Second Post",
+          previewText: "This is our second post!",
+          thumbnail:
+            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
+        }
+      ]
+    }
   }
 }
 </script>
