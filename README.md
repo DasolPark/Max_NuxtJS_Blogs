@@ -38,4 +38,10 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - Classic Mode: index.js 하나에서 모두 해결
 - Modules Mode: multiple .js files, Every .js file becomes a namespaced module
 
+## fetch
 
+- asyncData를 대체?
+
+## nuxtServerInit
+
+- Server가 시작할 때마다 항상 실행
