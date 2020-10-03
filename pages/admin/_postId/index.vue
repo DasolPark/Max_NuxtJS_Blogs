@@ -7,24 +7,29 @@
 </template>
 
 <script>
-import AdminPostForm from '@/components/Admin/AdminPostForm';
+import AdminPostForm from "@/components/Admin/AdminPostForm";
+import axios from "axios";
 
 export default {
-  layout: 'admin',
-  components:{
-    AdminPostForm
+  layout: "admin",
+  components: {
+    AdminPostForm,
   },
-  data() {
-    return {
-      loadedPost: {
-        author: 'David',
-        title: 'Awesome post',
-        content: 'Super amazing!',
-        thumbnailLink: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1'
-      }
-    }
-  }
-}
+  asyncData(context) {
+    return axios
+      .get(
+        "https://nuxt-blog-e7bbf.firebaseio.com/posts/" +
+          context.params.postId +
+          ".json"
+      )
+      .then((res) => {
+        return {
+          loadedPost: res.data,
+        };
+      })
+      .catch((e) => context.error(e));
+  },
+};
 </script>
 
 <style scoped>

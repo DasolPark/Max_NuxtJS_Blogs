@@ -24,7 +24,7 @@ import axios from "axios";
 
 export default {
   asyncData(context) {
-    return context
+    return axios
       .get(
         "https://nuxt-blog-e7bbf.firebaseio.com/posts/" +
           context.params.id +
