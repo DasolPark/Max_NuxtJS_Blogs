@@ -48,4 +48,6 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## firebase
 
-- New project - Realtime Database - read/write "true"
+- New project - Realtime Database - Rules: read/write "true"
+
+
