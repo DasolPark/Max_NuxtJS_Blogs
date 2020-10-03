@@ -20,24 +20,24 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: '1',
-          title: "First Post (ID: " + context.route.params.id + ")",
-          previewText: "This is our first post!",
-          author: 'David',
-          updatedDate: new Date(),
-          content: 'Some dummy text which is definityel not the preview text',
-          thumbnail:
-            "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmmsolutions.biz%2Fwp-content%2Fgallery%2Fhi-tech%2FHi%2520-%2520Tech%25203.jpg&f=1&nofb=1"
-        }
-      });
-    },1000)
-  }
-}
+  asyncData(context) {
+    return context
+      .get(
+        "https://nuxt-blog-e7bbf.firebaseio.com/posts/" +
+          context.params.id +
+          ".json"
+      )
+      .then((res) => {
+        return {
+          loadedPost: res.data,
+        };
+      })
+      .catch((e) => context.error(e));
+  },
+};
 </script>
 
 <style>
