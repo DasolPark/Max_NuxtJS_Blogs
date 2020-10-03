@@ -45,3 +45,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 ## nuxtServerInit
 
 - Server가 시작할 때마다 항상 실행
+
+## firebase
+
+- New project - Realtime Database - read/write "true"
