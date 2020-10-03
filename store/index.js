@@ -20,7 +20,7 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit(vuexContext, context) {
-        return axios.get('https://nuxt-blog-e7bbf.firebaseio.com/posts.json')
+        return axios.get(process.env.baseUrl + '/posts.json')
           .then(res => {
             // console.log(res.data);
             const postsArray = [];
@@ -38,7 +38,7 @@ const createStore = () => {
           updatedDate: new Date(),
         }
         return axios
-          .post("https://nuxt-blog-e7bbf.firebaseio.com/posts.json", createdPost)
+          .post(process.env.baseUrl + "/posts.json", createdPost)
           .then((result) => {
             // console.log(result.data.name);
             vuexContext.commit('addPost', { ...createdPost, id: result.data.name });
