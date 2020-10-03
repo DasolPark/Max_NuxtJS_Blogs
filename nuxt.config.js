@@ -27,6 +27,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     // '~assets/styles/main.css'
+    '~assets/styles/main.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -60,16 +61,25 @@ export default {
 
   // rootDir: '/my-app/'
 
-  router: {
-    // base: '/my-app/',
+  // router: {
+  // base: '/my-app/',
 
-    // extendRoutes(routes, resolve) {
-    //   routes.push({
-    //     path: '*',
-    //     component: resolve(__dirname, 'pages/index.vue')
-    //   })
-    // },
+  // extendRoutes(routes, resolve) {
+  //   routes.push({
+  //     path: '*',
+  //     component: resolve(__dirname, 'pages/index.vue')
+  //   })
+  // },
 
-    // linkActiveClass: 'active'
+  // linkActiveClass: 'active'
+  // }
+
+  // srcDir: 'client-app/'
+
+  // transition: 'page'
+  // or
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }
