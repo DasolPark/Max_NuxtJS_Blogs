@@ -13,6 +13,17 @@ export default {
     ]
   },
 
+  /*
+  ** Customize the progress-bar color
+  */
+
+  // loading: false,
+  // loadingIndicator: {
+  //   name: 'circle',
+  //   color: '#fa923f'
+  // },
+  loading: { color: '#fa923f', failedColor: 'yellow', height: '4px', duration: 5000 },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
