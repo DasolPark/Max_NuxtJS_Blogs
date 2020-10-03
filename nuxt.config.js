@@ -52,5 +52,24 @@ export default {
 
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-e7bbf.firebaseio.com'
+  },
+
+  // generate: {
+
+  // }
+
+  // rootDir: '/my-app/'
+
+  router: {
+    // base: '/my-app/',
+
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     path: '*',
+    //     component: resolve(__dirname, 'pages/index.vue')
+    //   })
+    // },
+
+    // linkActiveClass: 'active'
   }
 }
