@@ -50,4 +50,9 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 - New project - Realtime Database - Rules: read/write "true"
 
+## context.params.postId VS this.$route.params.postId
 
+## Server에는 update to date but, 화면에는 적용되지 않은 문제
+
+- store를 변경시키면 가능(서버 로딩 or 부담 X)
+- Actions에서 axios, Mutations에서 기존 data에 push 혹은 update
