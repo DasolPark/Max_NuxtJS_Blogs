@@ -75,10 +75,18 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - web api key는 project 설정에 있음
 - auth 또한 store에 집중시켜서 사용하면 좋음
 - firebase auth는 1시간 유지될 것임(문서 참고)
+
+- Data Base의 rules/write를 'auth != null'로 선언해줘야 auth된 사용자만 글을 쓰거나 수정할 수 있음
+- search 'firebase rest api auth'
+- 'Authenticate REST Requests' - 'Firebase ID tokens'
+- 뒤에 auth=ID_TOKEN 을 붙여줘야 인증 후 작성 가능
+
 - log In 상태일 때만 admin page를 보여주고 싶으면, middleware를 이용하면 됨
 - expire time 을 세팅하는 방법(in store)
 - refresh돼도 auth를 유지하는 방법(Local Storage) - but, refresh하면 깨짐
 - Browser feature와 Server를 잘 구분해야 한다(ex. Local Storage)
 - process.client를 이용하면 된다(client단이라는 것을 의미 - 이제 알아서 인식할 수도? 에러가 안남)
+
 - server가 local storage를 이용할 수 없다는 이슈 발생 - Cookie로 해결 가능
 - context.req 를 이용해 client와 server를 분리하여 auth 처리(in store)
+- Logout은 token과 expirationDate을 지워주면 된다(Cookie & LocalStorage)
