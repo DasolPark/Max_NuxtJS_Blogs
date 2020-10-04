@@ -8,7 +8,6 @@
 
 <script>
 import AdminPostForm from "@/components/Admin/AdminPostForm";
-import axios from "axios";
 
 export default {
   layout: "admin",
@@ -16,7 +15,7 @@ export default {
     AdminPostForm,
   },
   asyncData(context) {
-    return axios
+    return context.app.$axios
       .get(process.env.baseUrl + "/posts/" + context.params.postId + ".json")
       .then((res) => {
         return {
