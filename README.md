@@ -68,3 +68,11 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - Reload했을 경우 browser의 console.log()에는 해당 메시지가 뜨지 않는다.
 - 처음에는 server측 console.log()에 뜨기 때문, 그 후부터는 browser에서 확인 가능
 - nuxt.config.js의 router: { middleware: 'file name' }을 사용하면 전역에서 사용된다
+
+## Authenticate
+
+- firebase Auth REST API 검색해서 sign up/sign in 등 이용하면 됨
+- web api key는 project 설정에 있음
+- auth 또한 store에 집중시켜서 사용하면 좋음
+- firebase auth는 1시간 유지될 것임(문서 참고)
+- log In 상태일 때만 admin page를 보여주고 싶으면, middleware를 이용하면 됨
