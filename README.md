@@ -80,4 +80,5 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - refresh돼도 auth를 유지하는 방법(Local Storage) - but, refresh하면 깨짐
 - Browser feature와 Server를 잘 구분해야 한다(ex. Local Storage)
 - process.client를 이용하면 된다(client단이라는 것을 의미 - 이제 알아서 인식할 수도? 에러가 안남)
-- 
+- server가 local storage를 이용할 수 없다는 이슈 발생 - Cookie로 해결 가능
+- context.req 를 이용해 client와 server를 분리하여 auth 처리(in store)
