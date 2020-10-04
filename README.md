@@ -76,3 +76,8 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - auth 또한 store에 집중시켜서 사용하면 좋음
 - firebase auth는 1시간 유지될 것임(문서 참고)
 - log In 상태일 때만 admin page를 보여주고 싶으면, middleware를 이용하면 됨
+- expire time 을 세팅하는 방법(in store)
+- refresh돼도 auth를 유지하는 방법(Local Storage) - but, refresh하면 깨짐
+- Browser feature와 Server를 잘 구분해야 한다(ex. Local Storage)
+- process.client를 이용하면 된다(client단이라는 것을 의미 - 이제 알아서 인식할 수도? 에러가 안남)
+- 
