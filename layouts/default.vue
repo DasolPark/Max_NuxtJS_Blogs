@@ -1,38 +1,35 @@
 <template>
   <div>
     <TheHeader @sidenavToggle="displaySidenav = !displaySidenav" />
-    <TheSidenav
-      :show="displaySidenav"
-      @close="displaySidenav = false"
-    />
+    <TheSidenav :show="displaySidenav" @close="displaySidenav = false" />
     <Nuxt />
   </div>
 </template>
 
 <script>
-import TheHeader from '@/components/Navigation/TheHeader';
-import TheSidenav from '@/components/Navigation/TheSidenav';
+import TheHeader from "@/components/Navigation/TheHeader";
+import TheSidenav from "@/components/Navigation/TheSidenav";
 
 export default {
-  components:{
+  // middleware: "log",
+  components: {
     TheHeader,
-    TheSidenav
+    TheSidenav,
   },
   data() {
     return {
-      displaySidenav: false
-    }
-  }
-}
-
+      displaySidenav: false,
+    };
+  },
+};
 </script>
 
 <style>
-html{
-  font-family: 'Open Sans', sans-serif;
+html {
+  font-family: "Open Sans", sans-serif;
 }
 
-body{
-  margin:0;
+body {
+  margin: 0;
 }
 </style>

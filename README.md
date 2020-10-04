@@ -56,3 +56,15 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 - store를 변경시키면 가능(서버 로딩 or 부담 X)
 - Actions에서 axios, Mutations에서 기존 data에 push 혹은 update
+
+## Plugins
+
+- context.app.$axios or this.$axios 처럼 쓴다.
+- filter를 만들었다면 {{ variable | filter }} 형식으로 사용
+
+## Middleware
+
+- script에서 middleware: 'file name', 를 작성하여 사용 가능
+- Reload했을 경우 browser의 console.log()에는 해당 메시지가 뜨지 않는다.
+- 처음에는 server측 console.log()에 뜨기 때문, 그 후부터는 browser에서 확인 가능
+- nuxt.config.js의 router: { middleware: 'file name' }을 사용하면 전역에서 사용된다
